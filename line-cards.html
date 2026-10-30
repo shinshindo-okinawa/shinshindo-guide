@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LINEカード設定｜心身堂</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="common.css">
+<style>
+  .chat { background: #8CABD9; border-radius: var(--radius); padding: 16px 0; }
+  .chat-row { display: flex; gap: 10px; overflow-x: auto; padding-inline: 16px; scroll-snap-type: x mandatory; }
+  .lb { flex: 0 0 220px; scroll-snap-align: start; background: #FFFFFF; border-radius: 14px; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; color: #2A221D; }
+  .lb-h { color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 10px 14px; }
+  .lb-img { background: #FCE6D3; height: 150px; display: grid; place-items: end center; } .lb-img img { max-height: 140px; width: auto; display: block; }
+  .lb-full { display: block; height: auto; } .lb-full img { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 3; object-fit: cover; }
+  .lb-b { padding: 12px 14px; display: grid; gap: 4px; }
+  .lb-b strong { font-family: var(--font-head); font-size: 17px; }
+  .lb-b p { font-size: 13px; color: #6B5D52; }
+  .lb-f { padding: 0 12px 12px; }
+  .lb-f a { display: block; text-align: center; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 14px; padding: 8px; border-radius: 8px; }
+  .chain { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; counter-reset: c; }
+  .chain li { padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); counter-increment: c; display: grid; gap: 2px; }
+  .chain li::before { content: counter(c); font-family: var(--font-head); font-weight: 900; color: var(--brand-deep); }
+  .gh-h { font-size: 16px; margin-top: 8px; }
+  .gh-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: g; }
+  .gh-steps li { counter-increment: g; display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 10px; padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
+  .gh-steps li::before { content: counter(g); grid-row: span 2; width: 28px; height: 28px; border-radius: 50%; background: var(--flame); color: #FFFFFF; display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+  .gh-steps span { font-size: 13.5px; color: var(--muted); }
+  .gh-list { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 14px; }
+  table th { white-space: nowrap; text-align: left; }
+  pre { margin: 0; padding: 14px; font-size: 12px; line-height: 1.5; max-height: 360px; overflow: auto; background: var(--tint); border-radius: 12px; }
+  code { font-size: 12px; word-break: break-all; }
+</style>
+</head>
+<body>
+<p class="draft-bar">院内用の設定メモです（患者様には公開しません）。</p>
+<header class="hero hero-page"><div class="wrap"><p class="eyebrow">院内用</p><h1>LINEカード設定</h1>
+<p class="hero-lead">リッチメニューのボタン1つから、6枚のカードを表示して、それぞれのご案内ページへつなぐための設定です。</p></div></header><div class="band" aria-hidden="true"></div>
+<main class="wrap">
+
+<section class="block"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">患者様の動き</h2>
+<ol class="chain">
+<li><strong>リッチメニュー</strong><span class="note">「院のご案内」ボタンを押す</span></li>
+<li><strong>カード6枚が届く</strong><span class="note">横にスライドして選ぶ</span></li>
+<li><strong>ご案内ページ</strong><span class="note">「ご案内を見る」で開く</span></li>
+<li><strong>予約・相談</strong><span class="note">WEB予約・LINE・電話へ</span></li>
+</ol></section>
+
+<section class="block"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">カードの見え方</h2>
+<div class="chat"><div class="chat-row"><div class="lb"><div class="lb-h" style="background:#B9501A">お悩みから探す</div><div class="lb-img lb-full"><img src="img/line_symptoms.jpg" alt=""></div><div class="lb-b"><strong>症状から探す</strong><p>症状チェック・お悩み一覧・LINE相談</p></div><div class="lb-f"><a href="symptoms.html" style="background:#B9501A">ご案内を見る</a></div></div><div class="lb"><div class="lb-h" style="background:#B9501A">はじめて来院する</div><div class="lb-img lb-full"><img src="img/line_first.jpg" alt=""></div><div class="lb-b"><strong>初めての方へ</strong><p>来院の流れ・保険の使い方・コースの選び方</p></div><div class="lb-f"><a href="first.html" style="background:#B9501A">ご案内を見る</a></div></div><div class="lb"><div class="lb-h" style="background:#B9501A">通院している</div><div class="lb-img"><img src="img/ill_momo.png" alt=""></div><div class="lb-b"><strong>通院中の方へ</strong><p>Wellness Card・身体づくりのコース</p></div><div class="lb-f"><a href="regular.html" style="background:#B9501A">ご案内を見る</a></div></div><div class="lb"><div class="lb-h" style="background:#B9501A">事故・仕事中のケガ</div><div class="lb-img"><img src="img/ill_yara.png" alt=""></div><div class="lb-b"><strong>交通事故・労災の方へ</strong><p>自賠責保険・労災保険の手続きと流れ</p></div><div class="lb-f"><a href="accident.html" style="background:#B9501A">ご案内を見る</a></div></div><div class="lb"><div class="lb-h" style="background:#B9501A">部活・スポーツ</div><div class="lb-img"><img src="img/ill_daiki.png" alt=""></div><div class="lb-b"><strong>部活・スポーツの方へ</strong><p>学校でのケガ・スポーツ保険・競技向けコース</p></div><div class="lb-f"><a href="sports.html" style="background:#B9501A">ご案内を見る</a></div></div><div class="lb"><div class="lb-h" style="background:#B9501A">子育て中</div><div class="lb-img"><img src="img/ill_takuya.png" alt=""></div><div class="lb-b"><strong>子育て中のママへ</strong><p>ママ向けコース・キッズスペース・医療費助成</p></div><div class="lb-f"><a href="mama.html" style="background:#B9501A">ご案内を見る</a></div></div></div></div>
+<p class="note">横にスクロールできます。「ご案内を見る」を押すと、この下書きのページが開きます。</p></section>
+
+<section class="block"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">リッチメニューのつなぎ方</h2>
+<div class="two-col">
+<div class="ins ins-plain"><p class="ins-tag" style="background:var(--brand)">おすすめ</p><h3>A. ボタンでカードを送る</h3>
+<p>リッチメニューのボタンを「キーワード送信（例：院のご案内）」にして、そのキーワードへの自動応答でカード6枚を返します。トーク画面にカードが残るので、あとから見返せます。</p></div>
+<div class="ins ins-plain"><h3>B. ボタンでメニューページを開く</h3>
+<p>カードを使わず、ボタンから直接「ご案内メニュー」のページを開きます。設定はかんたんですが、トーク画面には残りません。</p>
+<p class="note">メニューページ：<code>https://shinshindo-okinawa.github.io/shinshindo-guide/menu.html</code></p></div>
+</div></section>
+
+<section class="block"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">カードの文言</h2>
+<p class="lead-s">LmessageやLINE公式アカウントのカード作成画面で入力するときは、この表の文言を使ってください。</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>タイトル／ラベル</th><th>説明文</th><th>ボタン</th><th>リンク先</th></tr></thead><tbody><tr><td>1</td><td><strong>症状から探す</strong><br><small>お悩みから探す</small></td><td>症状チェック・お悩み一覧・LINE相談</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/symptoms.html</code></td></tr><tr><td>2</td><td><strong>初めての方へ</strong><br><small>はじめて来院する</small></td><td>来院の流れ・保険の使い方・コースの選び方</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/first.html</code></td></tr><tr><td>3</td><td><strong>通院中の方へ</strong><br><small>通院している</small></td><td>Wellness Card・身体づくりのコース</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/regular.html</code></td></tr><tr><td>4</td><td><strong>交通事故・労災の方へ</strong><br><small>事故・仕事中のケガ</small></td><td>自賠責保険・労災保険の手続きと流れ</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/accident.html</code></td></tr><tr><td>5</td><td><strong>部活・スポーツの方へ</strong><br><small>部活・スポーツ</small></td><td>学校でのケガ・スポーツ保険・競技向けコース</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/sports.html</code></td></tr><tr><td>6</td><td><strong>子育て中のママへ</strong><br><small>子育て中</small></td><td>ママ向けコース・キッズスペース・医療費助成</td><td>ご案内を見る</td><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/mama.html</code></td></tr></tbody></table></div>
+<p class="note">リンク先は、GitHub Pagesで公開したあとのアドレスです。リポジトリ名を変える場合は、このアドレスも変わります。</p></section>
+
+<section class="block" id="github"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">GitHub Pagesでの公開</h2>
+<p class="lead-s">ご案内ページは、GitHubの無料の公開機能「GitHub Pages」で公開します。<br>GitHubは、Googleアカウントとは別のアカウント（shinshindo-okinawa）で管理して問題ありません。</p>
+<div class="table-wrap"><table><tbody>
+<tr><th>アカウント</th><td>shinshindo-okinawa（GitHub）</td></tr>
+<tr><th>リポジトリ名</th><td><code>shinshindo-guide</code>（公開：Public）</td></tr>
+<tr><th>公開アドレス</th><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/</code></td></tr>
+<tr><th>メニューページ</th><td><code>https://shinshindo-okinawa.github.io/shinshindo-guide/menu.html</code></td></tr>
+</tbody></table></div>
+
+<h3 class="gh-h">はじめて公開するとき</h3>
+<ol class="gh-steps">
+<li><strong>リポジトリを作る</strong><span>GitHubに shinshindo-okinawa でログインし、右上の「＋」→「New repository」。名前を <code>shinshindo-guide</code>、公開範囲を「Public」にして「Create repository」。</span></li>
+<li><strong>ファイルを入れる</strong><span>「uploading an existing file」を押し、公開用フォルダの中身（index.html・menu.html・data.js・img フォルダなど）をまとめてドラッグして「Commit changes」。</span></li>
+<li><strong>公開をオンにする</strong><span>「Settings」→ 左の「Pages」→ Source を「Deploy from a branch」、Branch を「main」「/(root)」にして「Save」。</span></li>
+<li><strong>表示を確認する</strong><span>数分後に公開アドレスを開き、スマホで7ページすべてが表示されるか確認します。</span></li>
+<li><strong>LINEにつなぐ</strong><span>下の「カードの文言」または「Flex Message（JSON）」でカードを作り、リッチメニューのボタンにつなぎます。</span></li>
+</ol>
+
+<h3 class="gh-h">内容を変えるとき</h3>
+<ul class="gh-list">
+<li>文章・コース・スタッフ情報は <code>data.js</code> にまとまっています。ここだけ書きかえれば、全ページに反映されます。</li>
+<li>写真は <code>img</code> フォルダの同じ名前のファイルを差しかえます。</li>
+<li>GitHubで変更したファイルをアップロードし直すと、<br>数分で公開ページも新しくなります。</li>
+</ul>
+
+<h3 class="gh-h">気をつけること</h3>
+<ul class="gh-list">
+<li>Publicのリポジトリは、中のファイルを誰でも見ることができます。患者様のお名前・連絡先などの個人情報は絶対に入れないでください。</li>
+<li>このページ（院内用）も、アドレスを知っていれば開けます。検索には出ない設定にしています。</li>
+<li>写真は、本人の了承を得たものだけを使ってください。</li>
+</ul>
+</section>
+
+<section class="block"><h2 class="sec-h"><img src="img/logo_mark.png" alt="">Flex Message（JSON）</h2>
+<p class="lead-s">Flex MessageのJSONを貼り付けられるツールでは、こちらを使えます。</p>
+<p><button type="button" class="mini-btn" id="copy-json">JSONをコピー</button></p>
+<pre id="flex-json">{
+  &quot;type&quot;: &quot;flex&quot;,
+  &quot;altText&quot;: &quot;心身堂のご案内メニューです。知りたいことを選んでください。&quot;,
+  &quot;contents&quot;: {
+    &quot;type&quot;: &quot;carousel&quot;,
+    &quot;contents&quot;: [
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;お悩みから探す&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/line_symptoms.jpg&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;cover&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;症状から探す&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;症状チェック・お悩み一覧・LINE相談&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/symptoms.html&quot;
+              }
+            }
+          ]
+        }
+      },
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;はじめて来院する&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/line_first.jpg&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;cover&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;初めての方へ&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;来院の流れ・保険の使い方・コースの選び方&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/first.html&quot;
+              }
+            }
+          ]
+        }
+      },
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;通院している&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/ill_momo.png&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;fit&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;通院中の方へ&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;Wellness Card・身体づくりのコース&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/regular.html&quot;
+              }
+            }
+          ]
+        }
+      },
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;事故・仕事中のケガ&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/ill_yara.png&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;fit&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;交通事故・労災の方へ&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;自賠責保険・労災保険の手続きと流れ&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/accident.html&quot;
+              }
+            }
+          ]
+        }
+      },
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;部活・スポーツ&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/ill_daiki.png&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;fit&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;部活・スポーツの方へ&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;学校でのケガ・スポーツ保険・競技向けコース&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/sports.html&quot;
+              }
+            }
+          ]
+        }
+      },
+      {
+        &quot;type&quot;: &quot;bubble&quot;,
+        &quot;size&quot;: &quot;kilo&quot;,
+        &quot;header&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;backgroundColor&quot;: &quot;#B9501A&quot;,
+          &quot;paddingAll&quot;: &quot;14px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;子育て中&quot;,
+              &quot;color&quot;: &quot;#FFFFFF&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;weight&quot;: &quot;bold&quot;
+            }
+          ]
+        },
+        &quot;hero&quot;: {
+          &quot;type&quot;: &quot;image&quot;,
+          &quot;url&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/img/ill_takuya.png&quot;,
+          &quot;size&quot;: &quot;full&quot;,
+          &quot;aspectRatio&quot;: &quot;4:3&quot;,
+          &quot;aspectMode&quot;: &quot;fit&quot;,
+          &quot;backgroundColor&quot;: &quot;#FCE6D3&quot;
+        },
+        &quot;body&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;spacing&quot;: &quot;sm&quot;,
+          &quot;paddingAll&quot;: &quot;16px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;子育て中のママへ&quot;,
+              &quot;weight&quot;: &quot;bold&quot;,
+              &quot;size&quot;: &quot;lg&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#2A221D&quot;
+            },
+            {
+              &quot;type&quot;: &quot;text&quot;,
+              &quot;text&quot;: &quot;ママ向けコース・キッズスペース・医療費助成&quot;,
+              &quot;size&quot;: &quot;sm&quot;,
+              &quot;wrap&quot;: true,
+              &quot;color&quot;: &quot;#6B5D52&quot;
+            }
+          ]
+        },
+        &quot;footer&quot;: {
+          &quot;type&quot;: &quot;box&quot;,
+          &quot;layout&quot;: &quot;vertical&quot;,
+          &quot;paddingAll&quot;: &quot;12px&quot;,
+          &quot;contents&quot;: [
+            {
+              &quot;type&quot;: &quot;button&quot;,
+              &quot;style&quot;: &quot;primary&quot;,
+              &quot;color&quot;: &quot;#B9501A&quot;,
+              &quot;height&quot;: &quot;sm&quot;,
+              &quot;action&quot;: {
+                &quot;type&quot;: &quot;uri&quot;,
+                &quot;label&quot;: &quot;ご案内を見る&quot;,
+                &quot;uri&quot;: &quot;https://shinshindo-okinawa.github.io/shinshindo-guide/mama.html&quot;
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}</pre></section>
+
+</main>
+<script>
+document.getElementById("copy-json").addEventListener("click", function () {
+  var b = this, t = document.getElementById("flex-json").textContent;
+  function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById("flex-json")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  try { navigator.clipboard.writeText(t).then(function () { b.textContent = "コピーしました"; setTimeout(function () { b.textContent = "JSONをコピー"; }, 1600); }, sel); } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>
