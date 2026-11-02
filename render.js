@@ -154,13 +154,13 @@
       groups[c.group].push(c);
     });
     var hasNonAcu = ids.some(function (id) { var c = courseById(id); return c && !c.acupuncture && c.staff.length; });
-    var html = '<p class="lead-s">' + esc(D.courseNote) + "</p>" + (hasNonAcu ? '<p class="staff-note">' + esc(D.staffNote) + "</p>" : "");
+    var html = '<p class="lead-s">' + esc(D.courseNote) + "</p>" + (D.staffNote ? '<p class="staff-note">' + esc(D.staffNote) + "</p>" : "");
     order.forEach(function (g) {
       if (arg === "all") html += '<h3 class="group-h">' + esc(D.courseGroups[g]) + "</h3>";
       html += '<div class="courses">' + groups[g].map(function (c) {
         return '<details class="course" id="course-' + c.id + '"' + (ids.length === 1 ? " open" : "") + '><summary><span class="course-name">' + esc(c.name) + '</span><span class="course-catch">' + esc(c.catch) + "</span></summary>" +
           '<div class="course-body"><p class="small-h">こんな方に</p>' + list(c.forWho, "checks") + "<p>" + esc(c.text) + "</p>" +
-          '<div class="course-staff"><span class="tag">' + (c.acupuncture || !c.staff.length ? "担当" : "得意なスタッフ") + "</span>" + faces(c.staff) + "</div></div></details>";
+          '<div class="course-staff"><span class="tag">担当</span>' + faces(c.staff) + "</div></div></details>";
       }).join("") + "</div>";
     });
     var title = ids.length === 1 ? courseById(ids[0]).name : SECTION_TITLES.courses;
@@ -177,7 +177,7 @@
           '<div class="staff-name">' + (s.photo ? '<img class="staff-face" src="' + esc(s.photo) + '" alt="' + esc(s.name) + 'の写真">' : "") +
             '<p class="staff-role">' + esc(s.role || "スタッフ") + "</p>" +
             "<h3>" + esc(s.name) + (s.nickname ? ' <span class="nick">' + esc(s.nickname) + "</span>" : "") + "</h3>" +
-            '<p class="tags-h">得意な分野</p><ul class="tags">' + courses + "</ul></div></div>" +
+            '<p class="tags-h">担当</p><ul class="tags"><li>すべてのコース</li>' + (s.acupuncturist ? "<li>鍼灸</li>" : "") + "</ul></div></div>" +
         '<p class="staff-profile">' + esc(s.profile) + '</p><p class="staff-comment">' + esc(s.comment) + "</p></article>";
     }).join("") + "</div>";
     return section("staff", html);
@@ -315,7 +315,7 @@
     var html = '<div class="feature-grid">' +
       '<div class="feature"><h3>キッズスペースあり</h3><p>小さなお子様と一緒でも、安心して施術を受けられます。</p>' + list(D.kidsItems, "checks") + "</div>" +
       '<div class="feature"><h3>ご予約のときにお伝えください</h3><p>お子様連れで来院される場合は、ご予約のときにお知らせください。</p></div>' +
-      '<div class="feature"><h3>土日祝も受付</h3><p>ご家族の予定に合わせて通っていただけます。</p></div>' +
+      '<div class="feature"><h3>土日祝も受付</h3><p>ご家族の予定に合わせて通っていただけます。（毎月第4木曜日は休診日です）</p></div>' +
       '<div class="feature"><h3>まずは相談から</h3><p>無料健康相談を随時行っています。LINEでの事前相談もできます。</p></div>' +
       "</div>";
     return section("mamaIntro", html);
@@ -471,7 +471,7 @@
       "<h2>" + esc(C.name) + "</h2>" +
       '<div class="info-grid"><div><p class="info-h">受付時間</p><table class="hours"><tbody>' +
       C.hours.map(function (h) { return '<tr><th scope="row">' + esc(h.label) + "</th><td>" + esc(h.time) + "</td></tr>"; }).join("") +
-      "</tbody></table><p>" + esc(C.hoursNote) + "</p></div>" +
+      (C.closed ? '<tr class="closed"><th scope="row">休診日</th><td>' + esc(C.closed) + "</td></tr>" : "") + "</tbody></table><p>" + esc(C.hoursNote) + "</p></div>" +
       '<div><p class="info-h">住所・アクセス</p><p>' + esc(C.postal) + "<br>" + esc(C.address) + "</p>" + list(C.access) + "</div>" +
       '<div><p class="info-h">お電話</p><p class="phone-row"><span class="tel-text" id="tel-text">' + esc(t) + '</span></p>' +
       '<p class="phone-btns"><a class="mini-btn" href="tel:' + t.replace(/-/g, "") + '">電話をかける</a><button type="button" class="mini-btn" data-copy="' + esc(t) + '">番号をコピー</button></p>' +
