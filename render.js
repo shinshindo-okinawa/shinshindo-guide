@@ -7,10 +7,10 @@
   /* ---------- ページごとの構成 ---------- */
   var LAYOUTS = {
     first:    [["features"], ["flow"], ["insurance"], ["courses", "all"], ["staff", "all"], ["equipment"], ["faq"]],
-    regular:  [["plan"], ["wellness"], ["stages"], ["courses", "pain,fatigue,stretch,posture,constitution,physical"], ["goods", "all"], ["equipment"], ["staff", "toh,kinta,yara"]],
+    regular:  [["plan"], ["wellness"], ["stages"], ["courses", "pain,fatigue,stretch,posture,constitution,physical"], ["goods", "all"], ["equipment"], ["staff", "all"]],
     accident: [["jibai"], ["courses", "accident,pain"], ["rousai"], ["staff", "all"]],
-    sports:   [["school"], ["sportsIns"], ["courses", "sports-injury,pain,conditioning,sports-stretch,junior,sports-acu,physical"], ["goods", "carebox,supporter"], ["staff", "daiki,yara,toh"], ["equipment"], ["kidsMed", "short"]],
-    mama:     [["mamaIntro"], ["courses", "mama,prenatal,pain,posture,constitution"], ["kidsMed"], ["wellness"], ["staff", "kinta"]],
+    sports:   [["school"], ["sportsIns"], ["courses", "sports-injury,pain,conditioning,sports-stretch,junior,sports-acu,physical"], ["goods", "carebox,supporter"], ["staff", "all"], ["equipment"], ["kidsMed", "short"]],
+    mama:     [["mamaIntro"], ["courses", "mama,prenatal,pain,posture,constitution"], ["kidsMed"], ["wellness"], ["staff", "all"]],
     about:    [["aboutIntro"], ["troubles"], ["people"], ["services"], ["firstTime"]],
     symptoms: [["symCheck"], ["symList"], ["redFlags"], ["consult"], ["symFaq"]]
   };
