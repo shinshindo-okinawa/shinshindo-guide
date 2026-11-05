@@ -396,8 +396,9 @@
 
   /* ---------- 症状から探す ---------- */
   function lineChatUrl(text) {
-    var m = /\/p\/(@?[^/?#]+)/.exec(D.clinic.links.line.url);
-    return m ? "https://line.me/R/oaMessage/" + m[1] + "/?" + encodeURIComponent(text) : D.clinic.links.line.url;
+    var L = D.clinic.links.line;
+    var id = L.id || ((/\/p\/(@?[^/?#]+)/.exec(L.url) || [])[1]);
+    return id ? "https://line.me/R/oaMessage/" + id + "/?" + encodeURIComponent(text) : L.url;
   }
 
   R.symCheck = function () {
@@ -440,7 +441,7 @@
       '<div class="consult-box"><p class="small-h">送るときのひな形</p><pre class="consult-tpl">' + esc(S.consultTemplate) + "</pre>" +
       '<div class="actions"><a class="btn btn-line" href="' + esc(lineChatUrl(S.consultTemplate)) + '" target="_blank" rel="noopener">ひな形つきでLINEを開く</a>' +
       '<button type="button" class="btn btn-sub" data-copy="' + esc(S.consultTemplate) + '">ひな形をコピー</button></div>' +
-      '<p class="note">LINEが開いたら、①〜④を書き足して送ってください。うまく開かないときは、ひな形をコピーしてLINEに貼り付けてください。</p></div>';
+      '<p class="note">スタッフが直接お返事する「心身堂サポートチャット」（LINE）が開きます。はじめての方は、友だち追加をしてからお送りください。<br>LINEが開いたら、①〜④を書き足して送ってください。うまく開かないときは、ひな形をコピーしてLINEに貼り付けてください。</p></div>';
     return section("consult", html, "わからないときは、LINEで相談");
   };
 
@@ -476,6 +477,7 @@
       '<div><p class="info-h">お電話</p><p class="phone-row"><span class="tel-text" id="tel-text">' + esc(t) + '</span></p>' +
       '<p class="phone-btns"><a class="mini-btn" href="tel:' + t.replace(/-/g, "") + '">電話をかける</a><button type="button" class="mini-btn" data-copy="' + esc(t) + '">番号をコピー</button></p>' +
       actions(false) +
+      '<p class="note line-note">「LINEで相談」は、スタッフと直接やりとりできる「心身堂サポートチャット」につながります。</p>' +
       '<p class="sns"><a href="' + L.instagram.url + '" target="_blank" rel="noopener">Instagram</a><a href="' + L.homepage.url + '" target="_blank" rel="noopener">ホームページ</a></p></div></div>' +
       '<p class="copy">© ' + esc(C.name) + "</p></div></footer>";
   }

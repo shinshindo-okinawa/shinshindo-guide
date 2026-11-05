@@ -423,3 +423,5 @@ ul.cross li::after { transform: rotate(-45deg); }
 .bm-spot i { width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(255, 255, 255, .35); }
 .bm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .sym-group { scroll-margin-top: 12px; }
+
+.line-note { margin-top: 8px; color: rgba(255,255,255,.75); }
