@@ -438,10 +438,10 @@
   R.consult = function () {
     var S = D.symptoms;
     var html = '<p class="lead-s">' + esc(S.consultLead) + '</p><ol class="consult-items">' + S.consultItems.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ol>" +
-      '<div class="consult-box"><p class="small-h">送るときのひな形</p><pre class="consult-tpl">' + esc(S.consultTemplate) + "</pre>" +
-      '<div class="actions"><a class="btn btn-line" href="' + esc(lineChatUrl(S.consultTemplate)) + '" target="_blank" rel="noopener">ひな形つきでLINEを開く</a>' +
-      '<button type="button" class="btn btn-sub" data-copy="' + esc(S.consultTemplate) + '">ひな形をコピー</button></div>' +
-      '<p class="note">スタッフが直接お返事する「心身堂サポートチャット」（LINE）が開きます。はじめての方は、友だち追加をしてからお送りください。<br>LINEが開いたら、①〜④を書き足して送ってください。うまく開かないときは、ひな形をコピーしてLINEに貼り付けてください。</p></div>';
+      '<div class="consult-box"><p class="small-h">送るときの書き方の見本</p><pre class="consult-tpl">' + esc(S.consultTemplate) + "</pre>" +
+      '<div class="actions"><a class="btn btn-line" href="' + esc(lineChatUrl(S.consultTemplate)) + '" target="_blank" rel="noopener">書き方の見本つきでLINEを開く</a>' +
+      '<button type="button" class="btn btn-sub" data-copy="' + esc(S.consultTemplate) + '">書き方の見本をコピー</button></div>' +
+      '<p class="note">スタッフが直接お返事する「心身堂サポートチャット」（LINE）が開きます。はじめての方は、友だち追加をしてからお送りください。<br>LINEが開いたら、①〜④を書き足して送ってください。うまく開かないときは、書き方の見本をコピーしてLINEに貼り付けてください。</p></div>';
     return section("consult", html, "わからないときは、LINEで相談");
   };
 
