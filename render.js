@@ -296,18 +296,18 @@
     var K = D.systems.kidsMed;
     var contact = '<div class="contact-row"><span>' + esc(K.contact.name) + '</span><span class="tel-text">' + esc(K.contact.tel) + "</span></div>";
     if (arg === "short") {
-      var s = '<p class="lead-s">' + esc(K.lead) + "</p>" + list(["子ども医療費助成：読谷村に住所がある0歳〜中学3年生まで", "ひとり親家庭等医療費助成：ひとり親家庭など"], "checks") +
-        "<p>" + esc(K.method) + '</p><p class="note">※助成の対象は健康保険が使える施術だけです。</p>' +
-        '<p><a class="text-link" href="' + D.pages.mama.file + '#kidsMed">医療費助成のくわしい説明を見る</a></p>' + contact;
+      var s = '<p class="lead-s">' + esc(K.lead) + "</p>" + list(["子ども医療費助成：対象年齢はお住まいの市町村ごとに異なります", "ひとり親家庭等医療費助成：ひとり親家庭など"], "checks") +
+        "<p>" + esc(K.method) + '</p><p class="note">※助成の対象は健康保険が使える施術だけです。対象年齢などは、お住まいの市町村役場へご確認ください。</p>' +
+        '<p><a class="text-link" href="' + D.pages.mama.file + '#kidsMed">医療費助成のくわしい説明を見る</a></p>';
       return section("kidsMed", s, K.title);
     }
     var programs = '<div class="two-col">' + K.programs.map(function (p) {
-      return '<div class="ins ins-plain"><h3>' + esc(p.name) + '</h3><p class="small-h">対象</p><p>' + esc(p.who) + '</p><p class="small-h">助成の内容</p><p>' + esc(p.what) + '</p><p class="small-h">利用するときに必要なもの</p>' + list(p.bring, "checks") + "</div>";
+      return '<div class="ins ins-plain"><h3>' + esc(p.name) + '</h3><p class="small-h">対象</p><p>' + esc(p.who) + '</p><p class="small-h">助成の内容</p><p>' + esc(p.what) + '</p><p class="small-h">心身堂の窓口でお持ちいただくもの</p>' + list(p.bring, "checks") + "</div>";
     }).join("") + "</div>";
     var full = '<p class="lead-s">' + esc(K.lead) + "</p>" + programs +
       '<h3 class="sub-h">心身堂でのご利用の流れ</h3><p>' + esc(K.method) + "</p>" + steps(K.steps) +
       '<div class="callout callout-warn"><h3>ご注意ください</h3>' + list(K.notes) + "</div>" +
-      '<p class="small-h">読谷村のお問い合わせ先</p>' + contact;
+      '<p class="small-h">お問い合わせ先</p><p>' + esc(K.contactLead) + '</p>' + contact;
     return section("kidsMed", full, K.title);
   };
 
